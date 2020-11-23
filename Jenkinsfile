@@ -20,7 +20,7 @@ pipeline {
             script {
                 openshift.withCluster() {
                     openshift.withProject(PROJECT) {
-                        'oc apply -f apachejm_3.yaml -n dev'
+                        'oc apply -f https://github.com/thegodsson/data_apache.git -n dev'
                     }
                 }
                 
