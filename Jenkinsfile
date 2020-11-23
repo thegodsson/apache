@@ -20,7 +20,7 @@ pipeline {
             script {
                 openshift.withCluster() {
                     openshift.withProject(PROJECT) {
-                        openshift.newApp('httpd')
+                        'oc apply -f apachejm_3.yaml -n dev'
                     }
                 }
                 
