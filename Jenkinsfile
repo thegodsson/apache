@@ -1,3 +1,5 @@
+def PROJECT = 'dev'
+
 pipeline {
   agent { label 'master' }
   
@@ -18,7 +20,7 @@ pipeline {
             script {
                 openshift.withCluster() {
                     openshift.withProject(PROJECT) {
-                        'oc apply -f apachejm_3.yaml -n dev'
+                        openshift.newApp('httpd')
                     }
                 }
                 
